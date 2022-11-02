@@ -1,16 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test filtering</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
 <a href="{% url 'pages:home' %}">Home</a>
 <a href="/admin/">Admin</a>
 <a href="{% url 'pages:superuser-toggle' %}">Superuser ({{ user.is_superuser }})</a>
+{% if perms.projects %}
+    <a href="{% url 'projects:list' %}">Projects</a>
+{% endif %}
 {% if perms.surveys %}
     <a href="{% url 'surveys:list' %}">Surveys</a>
 {% endif %}
+<p>
+    User: {{ user }}
+</p>
+<hr>
 {% block content %}
 {% endblock %}
 </body>

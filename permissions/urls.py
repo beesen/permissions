@@ -21,4 +21,5 @@ urlpatterns = [
     # path('projects/', include('projects.urls')),
     path('surveys/', include('surveys.urls')),
     path('', include('pages.urls')),
+    path('projects/', include('projects.urls')),
 ]

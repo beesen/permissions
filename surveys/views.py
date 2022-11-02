@@ -1,20 +1,13 @@
-from django.contrib.auth.mixins import UserPassesTestMixin
-from django.db.models import QuerySet
-from django.views import generic
-from django.views.generic import ListView
+from django_filters.views import FilterView
+from django_tables2 import SingleTableMixin
 
-from surveys.models import Survey
+from .filters import SurveyFilter
+from .models import Survey
+from .tables import SurveyTable
 
 
 # Create your views here.
-class SurveyListView(UserPassesTestMixin, ListView):
+class SurveyListView(SingleTableMixin, FilterView):
     model = Survey
-    permission_required = "survey.view_survey"
-
-    def test_func(self):
-        j = self.request.user.has_perm("surveys.view_survey")
-        return j
-
-    def get_queryset(self) -> QuerySet:
-        queryset = super().get_queryset()
-        return queryset
+    table_class = SurveyTable
+    filterset_class = SurveyFilter

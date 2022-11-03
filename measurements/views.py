@@ -1,3 +1,5 @@
+import datetime
+
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django_filters.views import FilterView
@@ -17,6 +19,7 @@ class MeasurementListView(SingleTableMixin, FilterView):
     table_class = MeasurementTable
     filterset_class = MeasurementFilter
 
+
 def fill_measurements(request):
     # Verwijder alle measurements van Thoresci
     project = Project.objects.get(name='THORESCI')
@@ -27,6 +30,9 @@ def fill_measurements(request):
     # Maak nieuwe measurements voor alle respondenten van Thoresci
     for respondent in respondents:
         for schedule in schedules:
-            measurement = Measurement(respondent=respondent, schedule=schedule)
+            # TODO: bereken de theoretische datum waarop de meting start
+            m_dt = datetime.date
+            measurement = Measurement(respondent=respondent, schedule=schedule,
+                                      measurement_dt='2020-10-10')
             measurement.save()
     return HttpResponseRedirect(reverse('measurements:list'))

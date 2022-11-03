@@ -117,4 +117,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 INSTALLED_APPS += ['django_filters', 'django_tables2']
-INSTALLED_APPS += ['pages', 'projects', 'surveys']
+INSTALLED_APPS += ['pages', 'projects', 'surveys', 'measurements', 'respondents',
+                   'schedules', 'moments']

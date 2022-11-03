@@ -1,0 +1,111 @@
+[
+  {
+    "model": "moments.moment",
+    "pk": 1,
+    "fields": {
+      "project": 1,
+      "seq_nr": 1,
+      "nr_of_time_units": 1
+    }
+  },
+  {
+    "model": "moments.moment",
+    "pk": 2,
+    "fields": {
+      "project": 1,
+      "seq_nr": 2,
+      "nr_of_time_units": 6
+    }
+  },
+  {
+    "model": "moments.moment",
+    "pk": 3,
+    "fields": {
+      "project": 1,
+      "seq_nr": 3,
+      "nr_of_time_units": 12
+    }
+  },
+  {
+    "model": "projects.project",
+    "pk": 1,
+    "fields": {
+      "name": "THORESCI"
+    }
+  },
+  {
+    "model": "respondents.respondent",
+    "pk": 1,
+    "fields": {
+      "name": "Jan Jansen"
+    }
+  },
+  {
+    "model": "respondents.respondent",
+    "pk": 2,
+    "fields": {
+      "name": "Klaas Klaasen"
+    }
+  },
+  {
+    "model": "respondents.respondent",
+    "pk": 3,
+    "fields": {
+      "name": "Piet Pieters"
+    }
+  },
+  {
+    "model": "schedules.schedule",
+    "pk": 1,
+    "fields": {
+      "project": 1,
+      "survey": 1,
+      "moment": 1
+    }
+  },
+  {
+    "model": "schedules.schedule",
+    "pk": 2,
+    "fields": {
+      "project": 1,
+      "survey": 2,
+      "moment": 2
+    }
+  },
+  {
+    "model": "schedules.schedule",
+    "pk": 3,
+    "fields": {
+      "project": 1,
+      "survey": 1,
+      "moment": 3
+    }
+  },
+  {
+    "model": "schedules.schedule",
+    "pk": 4,
+    "fields": {
+      "project": 1,
+      "survey": 2,
+      "moment": 3
+    }
+  },
+  {
+    "model": "surveys.survey",
+    "pk": 1,
+    "fields": {
+      "project": 1,
+      "name": "THOR 1",
+      "survey_type": "QST"
+    }
+  },
+  {
+    "model": "surveys.survey",
+    "pk": 2,
+    "fields": {
+      "project": 1,
+      "name": "THOR 2",
+      "survey_type": "QST"
+    }
+  }
+]

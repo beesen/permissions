@@ -20,6 +20,9 @@
 {% if perms.surveys %}
     <a href="{% url 'surveys:list' %}">Surveys</a>
 {% endif %}
+{% if perms.measurements %}
+    <a href="{% url 'measurements:list' %}">Measurements</a>
+{% endif %}
 <p>
     User: {{ user }}
 </p>

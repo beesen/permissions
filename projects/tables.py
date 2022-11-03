@@ -8,4 +8,4 @@ class ProjectTable(tables.Table):
         attrs = {"class": "table table-sm table-hover data-table"}
         template_name = "django_tables2/bootstrap4.html"
         model = Project
-        fields = ['id', 'name', 'created']
+        fields = ['id', 'name']

@@ -8,4 +8,4 @@ class SurveyTable(tables.Table):
         attrs = {"class": "table table-sm table-hover data-table"}
         template_name = "django_tables2/bootstrap4.html"
         model = Survey
-        fields = ['id', 'name', 'survey']
+        fields = ['id', 'project', 'name']

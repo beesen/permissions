@@ -26,13 +26,13 @@ Menu {{ menu_list }}
 <a href="{% url 'pages:home' %}">Home</a>
 <a href="/admin/">Admin</a>
 <a href="{% url 'pages:superuser-toggle' %}">Superuser ({{ user.is_superuser }})</a>
-{% if perms.projects %}
+{% if perms.projects.view_project %}
     <a href="{% url 'projects:list' %}">Projects</a>
 {% endif %}
-{% if perms.surveys %}
+{% if perms.surveys.view_survey %}
     <a href="{% url 'surveys:list' %}">Surveys</a>
 {% endif %}
-{% if perms.measurements %}
+{% if perms.measurements.view_measurement %}
     <a href="{% url 'measurements:list' %}">Measurements</a>
 {% endif %}
 <p>

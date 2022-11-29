@@ -11,6 +11,18 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
+Permissions: {{ perms.groups }}<br>
+<hr>
+Menu {{ menu_list }}
+<hr>
+{% if menus_list %}
+    {% for menu in menu_list %}
+        <a href="{{ menu.href }}">{{ menu.titel }}</a>
+    {% endfor %}
+{% else %}
+    No menu items!
+{% endif %}
+<hr>
 <a href="{% url 'pages:home' %}">Home</a>
 <a href="/admin/">Admin</a>
 <a href="{% url 'pages:superuser-toggle' %}">Superuser ({{ user.is_superuser }})</a>
